@@ -22,27 +22,15 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import {defineComponent, PropType} from 'vue';
-import {Recipe} from "../types/recipe.ts";
+
+
+<script setup lang="ts">
+import { Recipe } from "../types/recipe.ts";
 import Button from "./Button.vue";
-import {Pencil, Trash2} from "lucide-vue-next";
+import { Pencil, Trash2 } from "lucide-vue-next";
 
-export default defineComponent({
-  name: 'RecipeCard',
-  methods: {Pencil, Trash2},
-  components: {Button},
-  props: {
-    recipe: {
-      type: Object as PropType<Recipe>,
-      required: true
-    }
-  },
-  setup(props) {
+defineProps<{
+  recipe: Recipe;
+}>();
 
-    return {
-      recipe: props.recipe,
-    };
-  }
-});
 </script>
